@@ -1,0 +1,20 @@
+hugo:
+  image: jansanchez/docker-hugo
+  volumes:
+    - ./source/:/tmp/source
+    - ./output/:/tmp/output
+  environment:
+    - HUGO_REFRESH_TIME=3600
+    - HUGO_THEME=ananke
+    - HUGO_BASEURL=http://localhost
+  restart: always
+
+web:
+  image: jojomi/nginx-static
+  volumes:
+    - ./output:/var/www
+  environment:
+    - VIRTUAL_HOST=http://localhost
+  ports:
+    - 80:80
+  restart: always
