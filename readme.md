@@ -16,3 +16,9 @@ git submodule update --init --recursive
 ```
 docker-compose up
 ```
+
+## Create a new post
+
+```
+make newpost "post_name"
+```
