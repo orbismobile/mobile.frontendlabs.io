@@ -5,7 +5,7 @@ hugo:
     - ./output/:/tmp/output
   environment:
     - HUGO_REFRESH_TIME=3600
-    - HUGO_THEME=cactus
+    - HUGO_THEME=huho
     - HUGO_BASEURL=http://localhost/
   restart: always
 

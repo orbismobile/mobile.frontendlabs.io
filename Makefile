@@ -1,8 +1,8 @@
 .DEFAULT_GOAL := help
 
-newpost: ## newpost command
-	@echo $(filter-out $@,$(MAKECMDGOALS))
-	/bin/sh .scripts/newpost.sh $(filter-out $@,$(MAKECMDGOALS))
+newpost: ## newpost command, Use: make newpost url=my_url
+	#@echo $(filter-out $@,$(MAKECMDGOALS))
+	/bin/sh .scripts/newpost.sh $(name)
 
 command: ## exec bash command
 	docker-compose exec hugo sh -c "hugo new posts/$(filter-out $@,$(MAKECMDGOALS)).md"
