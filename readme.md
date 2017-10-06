@@ -26,3 +26,9 @@ docker-compose up
 ```
 make newpost "post_name"
 ```
+
+## Add another theme
+
+```
+git submodule add git@github.com:account/hugo-theme_name-theme.git source/themes/theme_name
+```
