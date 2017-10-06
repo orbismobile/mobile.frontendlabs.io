@@ -1,10 +1,14 @@
 
 # Get Started
 
+## First
+
+Fork this repository.
+
 ## Clone
 
 ```
-git clone git@bitbucket.org:joejansanchez/mobile.frontendlabs.io.git
+git clone git@github.com:your_github_username/mobile.frontendlabs.io.git
 ```
 
 ```
@@ -23,11 +27,39 @@ git submodule update --init --recursive
 docker-compose up
 ```
 
-## Create a new post
+## Open your browser
+
+```
+http://localhost/
+```
+
+## Creating a new post
+
+This command creates a markdown file on the following path: `source/content/posts/`. This only works when your container is up and running.
+
+### Create a new post
 
 ```
 make newpost name=post_name
 ```
+
+### Change status
+
+Open your .md file with an editor and change the value of `draft: true` to `draft: false`, and write some of markdown like this:
+
+```
+---
+title: "Post_name"
+date: 2017-10-06T22:26:57Z
+draft: false
+---
+
+## Subtitle
+
+paragraph paragraph paragraph paragraph.
+```
+
+Save your changes.
 
 ## Open your browser
 
