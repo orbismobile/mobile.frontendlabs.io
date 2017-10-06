@@ -26,7 +26,13 @@ docker-compose up
 ## Create a new post
 
 ```
-make newpost "post_name"
+make newpost name=post_name
+```
+
+## Open your browser
+
+```
+http://localhost/
 ```
 
 # Extras
@@ -35,4 +41,10 @@ make newpost "post_name"
 
 ```
 git submodule add git@github.com:account/hugo-theme_name-theme.git source/themes/theme_name
+```
+
+## Creating a custom post from Docker-compose
+
+```
+docker-compose exec hugo sh -c "hugo new posts/post_name.md"
 ```
