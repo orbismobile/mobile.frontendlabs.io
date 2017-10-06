@@ -14,7 +14,7 @@ web:
   volumes:
     - ./output:/var/www
   environment:
-    - VIRTUAL_HOST=http://localhost
+    - VIRTUAL_HOST=http://localhost/
   ports:
     - 80:80
   restart: always
