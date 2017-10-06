@@ -5,6 +5,10 @@
 git clone git@bitbucket.org:joejansanchez/mobile.frontendlabs.io.git
 ```
 
+```
+cd mobile.frontendlabs.io
+```
+
 ## Update submodules (only the first time)
 
 ```
