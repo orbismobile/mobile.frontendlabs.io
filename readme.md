@@ -1,4 +1,6 @@
 
+# Get Started
+
 ## Clone
 
 ```
@@ -26,6 +28,8 @@ docker-compose up
 ```
 make newpost "post_name"
 ```
+
+# Extras
 
 ## Add another theme
 

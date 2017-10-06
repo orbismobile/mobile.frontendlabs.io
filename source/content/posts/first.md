@@ -4,7 +4,6 @@ date: 2017-10-02T20:00:47Z
 draft: false
 tags: [ "Development", "Go", "fast", "Blogging" ]
 categories: [ "Development" ]
-
 ---
 
 # First Post

@@ -1,6 +1,6 @@
 baseURL = "http://localhost/"
 languageCode = "en-us"
-title = "Cambiar"
+title = "Orbis Mobile's Blog'"
 
 [taxonomies]
   tag = "tags"
