@@ -1,7 +1,13 @@
 
 # Get Started
 
-## First
+## Requisites
+
+* [Git](https://www.atlassian.com/git/tutorials/install-git#linux)
+* [Docker](https://docs.docker.com/engine/installation/)
+* [Docker-Compose](https://docs.docker.com/compose/install/#install-compose)
+
+## Forking
 
 Fork this repository.
 
