@@ -14,7 +14,7 @@ Fork this repository.
 ## Clone
 
 ```
-git clone git@github.com:your_github_username/mobile.frontendlabs.io.git
+git clone git@github.com:YOUR_GITHUB_USERNAME/mobile.frontendlabs.io.git
 ```
 
 ```
