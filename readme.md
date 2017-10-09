@@ -36,7 +36,7 @@ docker-compose up
 ## Open your browser
 
 ```
-http://localhost/
+http://localhost:1313/
 ```
 
 ## Creating a new post
@@ -72,7 +72,7 @@ Save your changes.
 ## Open your browser
 
 ```
-http://localhost/
+http://localhost:1313/
 ```
 
 # Extras

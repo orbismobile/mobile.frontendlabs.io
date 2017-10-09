@@ -7,6 +7,9 @@ hugo:
     - HUGO_REFRESH_TIME=3600
     - HUGO_THEME=pickles
     - HUGO_BASEURL=http://localhost/
+    - HUGO_WATCH=true
+  ports:
+    - 1313:1313
   restart: always
 
 web:
