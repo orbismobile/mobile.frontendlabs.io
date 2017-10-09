@@ -41,7 +41,9 @@ http://localhost/
 
 ## Creating a new post
 
-This command creates a markdown file on the following path: `source/content/posts/`. This only works when your container is up and running.
+This command creates a markdown file on the following path: `source/content/posts/`.
+
+> _This only works when your container is up and running_.
 
 ### Create a new post
 
@@ -51,7 +53,7 @@ make newpost name=post_name
 
 ### Change status
 
-Open your new file `source/content/posts/post_name.md` file with an editor and change the value of `draft: true` to `draft: false`, and write some of markdown like this:
+Open your new file `source/content/posts/post_name.md` with an editor and change the value of `draft: true` to `draft: false`, and write some of markdown like this:
 
 ```
 ---
