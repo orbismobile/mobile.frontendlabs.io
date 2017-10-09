@@ -78,7 +78,7 @@ http://localhost/
 ## Add another theme
 
 ```
-git submodule add git@github.com:account/hugo-theme_name-theme.git source/themes/theme_name
+git submodule add git@github.com:GITHUB_ACCOUNT/hugo-THEME_NAME.git source/themes/THEME_NAME
 ```
 
 ## Creating a custom post from Docker-compose
