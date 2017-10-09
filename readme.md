@@ -51,7 +51,7 @@ make newpost name=post_name
 
 ### Change status
 
-Open your .md file with an editor and change the value of `draft: true` to `draft: false`, and write some of markdown like this:
+Open your new file `source/content/posts/post_name.md` file with an editor and change the value of `draft: true` to `draft: false`, and write some of markdown like this:
 
 ```
 ---
@@ -86,3 +86,5 @@ git submodule add git@github.com:account/hugo-theme_name-theme.git source/themes
 ```
 docker-compose exec hugo sh -c "hugo new posts/post_name.md"
 ```
+
+# Contrib
