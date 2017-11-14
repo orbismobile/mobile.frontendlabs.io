@@ -1,4 +1,4 @@
-hugo:
+hugodev:
   image: jansanchez/docker-hugo
   volumes:
     - ./source/:/tmp/source
