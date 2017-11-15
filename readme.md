@@ -27,7 +27,19 @@ cd mobile.frontendlabs.io
 git submodule update --init --recursive
 ```
 
-## Run
+## Run (Development)
+
+```
+make hugo
+```
+
+También se puede ejecutar el ambiente de desarrollo con la siguiente instrucción:
+
+```
+sh ./hugo.sh
+```
+
+## Run (Production)
 
 ```
 docker-compose up
