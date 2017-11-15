@@ -36,7 +36,7 @@ docker-compose up
 ## Open your browser
 
 ```
-http://localhost:1313/
+http://localhost/
 ```
 
 ## Creating a new post
@@ -72,19 +72,17 @@ Save your changes.
 ## Open your browser
 
 ```
-http://localhost:1313/
+http://localhost/
 ```
 
 # Extras
 
 ## Add another theme
-
 ```
 git submodule add git@github.com:GITHUB_ACCOUNT/hugo-THEME_NAME.git source/themes/THEME_NAME
 ```
 
 ## Creating a custom post from Docker-compose
-
 ```
 docker-compose exec hugo sh -c "hugo new posts/post_name.md"
 ```

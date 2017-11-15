@@ -1,15 +1,21 @@
-hugodev:
+hugo:
   image: jansanchez/docker-hugo
   volumes:
     - ./source/:/tmp/source
     - ./output/:/tmp/output
   environment:
-    - HUGO_BASEURL=http://localhost/ #HUGO_BASEURL=http://external_ip/
+    #HUGO_BASEURL=http://external_ip/
+    - HUGO_BASEURL=http://localhost/
     - HUGO_PORT=80
     - HUGO_THEME=pickles
-    - HUGO_WATCH=true
-  restart: always
-  ports:
-    - 80:80 # client:dockerhost
+    - HUGO_WATCH=false
 
-  #URL: HUGO_BASEURL:HUGO_PORT
+web:
+  image: jojomi/nginx-static
+  volumes:
+    - ./output:/var/www/
+  environment:
+    - VIRTUAL_HOST=http://localhost/
+  ports:
+    - 80:80
+  restart: always

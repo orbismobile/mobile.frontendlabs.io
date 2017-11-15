@@ -1,5 +1,8 @@
 .DEFAULT_GOAL := help
 
+hugo: ## hugo command, Use: make hugo
+	/bin/sh ./hugo.sh
+
 newpost: ## newpost command, Use: make newpost url=my_url
 	#@echo $(filter-out $@,$(MAKECMDGOALS))
 	/bin/sh .scripts/newpost.sh $(name)
@@ -7,7 +10,7 @@ newpost: ## newpost command, Use: make newpost url=my_url
 command: ## exec bash command
 	docker-compose exec hugo sh -c "hugo new posts/$(filter-out $@,$(MAKECMDGOALS)).md"
 
-up: ## Up services
+up: ## Up services Production
 	docker-compose up
 
 help:
