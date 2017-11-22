@@ -4,8 +4,7 @@ hugo:
     - ./source/:/tmp/source
     - ./output/:/tmp/output
   environment:
-    #HUGO_BASEURL=http://external_ip/
-    - HUGO_BASEURL=http://localhost/
+    - HUGO_BASEURL=http://mobile.frontendlabs.io/
     - HUGO_PORT=80
     - HUGO_THEME=pickles
     - HUGO_WATCH=false
@@ -15,7 +14,7 @@ web:
   volumes:
     - ./output:/var/www/
   environment:
-    - VIRTUAL_HOST=http://localhost/
+    - VIRTUAL_HOST=http://mobile.frontendlabs.io/
   ports:
     - 80:80
   restart: always
