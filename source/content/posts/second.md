@@ -1,5 +1,5 @@
 ---
-title: "Second Post updated from startup"
+title: "Second Post updated from local"
 date: 2017-10-03T23:00:53Z
 draft: false
 tags: [ "development", "fast" ]
