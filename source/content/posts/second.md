@@ -20,6 +20,8 @@ _This will also be italic_
 **This text will be bold**
 __This will also be bold__
 
+![Default Image](../second/screenshot.png)
+
 _You **can** combine them_
 
 ![Default Image](../../images/default.jpg)
