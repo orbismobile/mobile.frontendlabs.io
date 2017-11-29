@@ -6,9 +6,9 @@ tags: [ "development", "fast" ]
 categories: [ "UX" ]
 ---
 
-A second lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat http://github.com - automatic! [GitHub](http://github.com).
-
 [Guia para escribir un post](https://github.com/frontend-labs/info/blob/master/creacion-de-un-articulo.md)
+
+A second lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat http://github.com - automatic! [GitHub](http://github.com).
 
 ### Cabecera 3
 
