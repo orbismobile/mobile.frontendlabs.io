@@ -1,6 +1,5 @@
 languageCode = "en-us"
 title = "Orbis Mobile's Blog"
-pygmentsUseClasses= true
 pygmentsCodeFencesGuessSyntax = true
 pygmentsStyle =  "monokai"
 pygmentsUseClasses = true

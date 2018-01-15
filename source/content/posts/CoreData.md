@@ -8,7 +8,7 @@ draft: false
 
 Hasta hace algunos días no había tenido la necesidad de utilizar un manejador de base de datos en las aplicaciones que he desarrollado, para manejar la persistencia de datos utilizaba los [UserDefaults](https://developer.apple.com/documentation/foundation/userdefaults).
 <p align="justify">
-Pero me ví con la necesidad de almacener una cantidad de datos mucho mayor, podría utilizar los **UserDefaults** pero no es óptimo, los mismos desarrolladores de **Apple** recomiendan implementar los UserDefaults para almacenar información puntual acerca del usuario y sus preferencias, por lo que necesitaba utilizar un manejador de base de datos y esto era algo nuevo para mí, tenía que decidir entre las diferentes bases de datos compatibles con dispositivos iOS y una entre ellas se encontraba **CoreData** que es un framework desarrollada y recomendada por **Apple**.</p>
+Pero me ví en la necesidad de almacener una cantidad de datos mucho mayor, podría utilizar los **UserDefaults** pero no es óptimo, los mismos desarrolladores de **Apple** recomiendan implementar los UserDefaults para almacenar información puntual acerca del usuario y sus preferencias, por lo que necesitaba utilizar un manejador de base de datos y esto era algo nuevo para mí, tenía que decidir entre las diferentes bases de datos compatibles con dispositivos iOS y una entre ellas se encontraba **CoreData** que es un framework desarrollado y recomendado por **Apple**.</p>
 <p align="justify">
 Dicho lo anterior, vamos a comenzar a crear nuestro modelo de datos con sus respectivas entidades, almacenaremos datos en ellos y recuperaremos esos datos para mostrarlos al usuario haciendo uso de **CoreData**</p>
 
@@ -19,18 +19,18 @@ Crear el modelo para nuestra base de datos es tan sencillo como hacer un **click
 
 ![Default Image](../CoreData/CrearModeloCoreData.png)
 <p align="justify">
- Puedes ubicar el modelo de tu base de datos en bundle de tu proyecto , el nombre al modelo asigna automáticamente como **"Nombre_Proyecto.xcdatamodeld"** pero si gustas puedes cambiarle el nombre.</p>
+ Puedes ubicar el modelo de tu base de datos en el bundle de tu proyecto , el nombre al modelo es asignado automáticamente como **"Nombre_Proyecto.xcdatamodeld"** pero si gustas puedes cambiarle el nombre.</p>
 
 ![Default Image](../CoreData/ModeloBaseDatos.png)
 
-* si olvidaste agregar la base de datos al crear tu proyecto , no te preocupes a continuación te mostraré cómo agregarlo de manera manual.
+* Si olvidaste agregar la base de datos al crear tu proyecto, no te preocupes a continuación te mostraré cómo agregarlo de manera manual.
 
 ![Default Image](../CoreData/CrearModeloManual.gif)
 
 
 ### ¿Cómo crear las entidades en mi base de datos?
 <p align="justify">
-Las entidades son tratados como objetos , en nuestro ejemplo definiremos la entidad **Persona**. Para agregar una entidad basta con hacer click en el botón **Add Entity** que se encuentra en la parte baja del archivo de tu modelo y luego hacer doble click para cambiar el nombre.</p>
+Las entidades son tratados como objetos, en nuestro ejemplo definiremos la entidad **Persona**. Para agregar una entidad basta con hacer click en el botón **Add Entity** que se encuentra en la parte baja del archivo de tu modelo y luego hacer doble click para cambiar el nombre.</p>
 
 ![Default Image](../CoreData/CrearEntidad.gif)
 <p align="justify">
@@ -39,11 +39,11 @@ Las entidades son tratados como objetos , en nuestro ejemplo definiremos la enti
 ![Default Image](../CoreData/CrearAtributo.gif)
 
 
-### Ya hemos definido nuestra entidad y su atributo, pero ¿Cómo puedo grabar acceder a mi entidad y guardas datos?
+### Ya hemos definido nuestra entidad y su atributo, pero ¿Cómo puedo acceder a mi entidad y grabar datos?
 <p align="justify">
-Para nuestro ejemplo haremos uso de un TableViewController y simularemos una lista de personas la cuál inicialmente se encontrará vacía y mediante el uso de un botón agregaremos personas a la lista.</p>
+Para nuestro ejemplo haremos uso de un TableViewController y simularemos una lista de personas la cual inicialmente se encontrará vacía y mediante el uso de un botón agregaremos personas a la lista.</p>
 <p align="justify">
-* Para poder hacer uso de los métodos y poder acceder a nuestra base de datos , necesitamos importar el framework CoreData en nuestro controllador de la vista, bastará con declarar la siguiente línea en la cabecera del controlador:</p>
+* Para poder hacer uso de los métodos y poder acceder a nuestra base de datos, necesitamos importar el framework CoreData en nuestro controllador de la vista, bastará con declarar la siguiente línea en la cabecera del controlador:</p>
 
 ```Swift
 import CoreData
@@ -124,14 +124,14 @@ func eliminar (palabra:String) {
 El desarrollo completo del ejemplo lo puedes encontrar en el siguiente [repositorio](https://github.com/Gerrard12/ExampleCoreData).
 
 <p align="justify">
-Como podrás ver el ingresar, recuperar y eliminar registros desde una base de datos es sumamente sencillo con CoreData, pero puede ser más sencillo inclusive ya que como mencione líneas arriba las entidades son tratadas como objetos sin necesidad de utilizar la referencia de llave-valor.</p>
+Como podrás ver, el ingresar, recuperar y eliminar registros desde una base de datos es sumamente sencillo con CoreData, pero puede ser más sencillo inclusive ya que como mencione líneas arriba las entidades son tratadas como objetos sin necesidad de utilizar la referencia de llave-valor.</p>
 <p align="justify">
 Para poder tratar las entidades como objetos solamente necesitas un poco de ayuda del Xcode, a continuación dejaré un gif de cómo generar las clases que nos ayudarán a tratar las entidades como objetos, tener en cuenta que en este punto ya deberíamos de tener nuestro modelo con sus entidades y atributos creados. </p>
 
 ![Default Image](../CoreData/CoreDataObject.gif)
 
 <p align="justify">
-Xcode nos genera 2 clases, una de ellas nos permite administrar las funciones (Persona+CoreDataClass) y en la otra podemos ver todos los atributos que fueron declarados en nuestra entidad (Persona+CodeDataProperties). Ahora veremos cómo cambiaría nuestro código al tratar las entidades como objetos</p>
+Xcode nos genera 2 clases, una de ellas nos permite administrar las funciones (Persona+CoreDataClass) y en la otra podemos ver todos los atributos que fueron declarados en nuestra entidad (Persona+CodeDataProperties). Ahora veremos cómo cambiaría nuestro código al tratar las entidades como objetos.</p>
 
 ```Swift
 func registrarNombre(nombre: String) {
@@ -155,7 +155,7 @@ func registrarNombre(nombre: String) {
 Puedes encontrar el proyecto completo, tratando las entidades como objetos en el siguiente [repositorio](https://github.com/Gerrard12/ExampleCoreDataObject).
 
 <p align="justify">
-Hemos llegado al final de este artículo, espero que les sirva de ayuda y sobre para  quitarse un poco el miedo de utilizar CoreData en sus aplicaciones, ya que utilizar un framework nativo y desarrollado por Apple es mejor que utilizar un framework externo.
+Hemos llegado al final de este artículo, espero que les sirva de ayuda y sobretodo para  quitarse un poco el miedo de utilizar CoreData en sus aplicaciones, ya que utilizar un framework nativo y desarrollado por Apple es mejor que utilizar un framework externo.
 </p>
 
 
