@@ -5,15 +5,14 @@ draft: false
 ---
 
 Cuando desarrollamos con APIs en nuestra aplicación,
- tenemos la limitante de programar o testear dependiendo la disponibilidad de este,
+ tenemos la limitante de programar o testear dependiendo la disponibilidad en el que se encuentre,
  la necesidad viene en ¿Podría testear mi aplicación sin depender todo el tiempo del servicio?, la respuesta es un contundente **Sí**,
  para lograr ello necesitamos acudir al uso de **stubs** y **mocks**.
 
 # Stubs
 
 Son aquellas implementaciones que normalmente retornar un valor fijo
- y toman el lugar de las funciones originales,
- como por ejemplo:
+ y toman el lugar de las funciones originales, por ejemplo:
 
 {{< gist andru255 b75444f1f41391921d2b2ec2fd75ba1b "randomNumber.swift">}}
 
