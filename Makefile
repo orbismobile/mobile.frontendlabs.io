@@ -3,7 +3,7 @@
 hugo: ## hugo command, Use: make hugo
 	/bin/sh ./hugo.sh
 
-newpost: ## newpost command, Use: make newpost url=my_url
+newpost: ## newpost command, Use: make newpost name=my_url
 	#@echo $(filter-out $@,$(MAKECMDGOALS))
 	/bin/sh .scripts/newpost.sh $(name)
 
