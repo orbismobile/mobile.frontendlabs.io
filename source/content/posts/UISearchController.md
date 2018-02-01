@@ -32,7 +32,7 @@ Primero vamos a declarar un ViewController donde mostraremos los resultados de b
     }()
 ```
 
-Luego voy a crear una instancia del UISearchController y realizar la personalizacion que deseamos
+Luego voy a crear una instancia del UISearchController y realizar la personalización que deseamos
 
 ```swift
     lazy var searchController: UISearchController = {
