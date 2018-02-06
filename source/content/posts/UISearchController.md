@@ -1,7 +1,7 @@
 ---
 title: "¿Cómo usar un UISearchController con su ResultViewController?"
 date: 2018-01-16T17:03:57Z
-draft: true
+draft: false
 ---
 
 # ¿Qué es un UISearchController?
@@ -66,7 +66,7 @@ Como ya tenemos nuestro SearchViewController lo asignamos a la vista donde lo qu
 
         // Definimos que el ResultViewController se muestre debajo de nuestro NavigationBar,
         // si colocamos el definesPresentationContext en false el ResultViewController se
-        // mostrara en toda la pantalla. 
+        // mostrara en toda la pantalla.
         self.definesPresentationContext = true
     }
 ```
@@ -81,7 +81,7 @@ Para mostrar lo resultados de busqueda del SearchController debemos implementar 
 
 ```swift
     extension MainViewController: UISearchResultsUpdating {
-    
+
     // Este es el metodo delegado para poder obtener cada letra que se ingrese en el SearchBar
     func updateSearchResults(for searchController: UISearchController) {
 
@@ -115,4 +115,3 @@ Debemos aprovechar el ResultViewController ya que es una de las formas convenien
 He visto en otras ocaciones en donde se suele usar el SearchController asignandole al ResultViewController como nil y terminando usando los protocolos del SearchBar para obtener los datos ingresado por el textField del SearchBar, cosa que seria inecesaria si se saber usar el ResultViewController .
 
 * El demo final se encuentra en [Github](https://github.com/erikfloresq/UISearchControllerDemo)
-
