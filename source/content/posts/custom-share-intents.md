@@ -1,22 +1,32 @@
+---
+title: "Custom Share Intents"
+date: 2018-01-23T23:00:53Z
+draft: false
+tags: [ "development", "fast" ]
+categories: [ "UX" ]
+---
+
 ![image](../custom-share-intents/img_header.png)
 
-El articulo se centra en poder personalizar la lista de ShareIntents en tu dispositivo móvil para poder compartir algún tipo de dato (Imágenes, Texto Plano, enlaces, etc.) a través de dichas aplicaciones o redes sociales. 
+Este artículo se centra en personalizar la lista de **ShareIntents** en tu dispositivo móvil para poder compartir algún tipo de dato*(Imágenes, Texto Plano, enlaces, etc)* a través de dichas aplicaciones o redes sociales.
 
 ## ¿Cuál es la novedad?
-Hasta este punto se podría hacer uso de los componentes nativos que el sistema operativo nos proporciona:
+Hasta este punto se podría hacer uso de los componentes nativos que el sistema operativo nos proporciona, pero surgen estas interrogantes:
 
-¿Que pasa si deseamos compartir cierta información solo con algunas aplicaciones especificas? 
-¿Agregar algún componente o efecto a la hora de mostrar la lista?
-¿Personalizar los ítems de la lista a mi antojo?
-¿Cambiar el tipo de fuente de la lista?
+- ¿Que pasa si deseamos compartir cierta información sólo con algunas aplicaciones específicas?
+- ¿Agregar algún componente o efecto a la hora de mostrar la lista?
+- ¿Personalizar los ítems de la lista a mi antojo?
+- ¿Cambiar el tipo de fuente de la lista?
 
-Simplemente no se podría, ya que la interfaz de compartir que nos muestra de forma nativa, cambia según la versión de Android que posea el usuario, para ello en este árticulo te mostraré la personalización del ShareIntents en un **RecyclerView** agregando el **BottomSheetDialog** y que actualmente aplicaciones como GoogleMaps, Youtube, Facebook la usan, consiguiendo una mejor interacción con el usuario.
+Simplemente no se podría, ya que la interfaz nativa de compartir cambia según la versión de Android que tiene el usuario móvil.
+
+ Para ello en este artículo te mostraré la personalización del ShareIntents en un **RecyclerView** agregando el **BottomSheetDialog** y que actualmente usan aplicaciones como GoogleMaps, Youtube, Facebook, logrando una mejor interacción con el usuario.
 
 
 > **BottomSheetDialog:** Fue incluido en la Biblioteca de Soporte 23.2 donde se intenta ofrecer versiones de API compatibles con lanzamientos anteriores.
 
-## ¿Cómo enviamos datos hacia otras aplicaciones? 
-Cuando construimos un **intent**, debemos especificar la acción que deseas que el intento "dispare". Android define varias acciones, incluida la ACTION_SEND que, como probablemente pueda adivinar, indica que la intención es enviar datos de una actividad a otra, incluso a través de los límites del proceso. Para enviar datos a otra actividad, todo lo que necesita hacer es especificar los datos y su tipo, el sistema identificará las actividades de recepción compatibles y las mostrará al usuario (si hay varias opciones) o iniciará inmediatamente la actividad (si solo hay una opción). 
+## ¿Cómo enviamos datos hacia otras aplicaciones?
+Cuando construimos un **intent**, debemos especificar la acción que deseamos que el intento "dispare". Android define varias acciones, incluída la **ACTION_SEND** que, como probablemente puedes adivinar, indica que la intención es enviar datos de una actividad a otra, incluso a través de los límites del proceso. Para enviar datos a otra actividad, todo lo que necesita hacer es especificar los datos y su tipo, el sistema identificará las actividades de recepción compatibles y las mostrará al usuario (si hay varias opciones) o iniciará inmediatamente la actividad (si solo hay una opción).
 
 ```java
 Intent sendIntent = new Intent();
@@ -26,12 +36,12 @@ sendIntent.setType("text/plain");
 startActivity(Intent.createChooser(sendIntent, getResources().getText(R.string.send_to)));
 ```
 
-En realidad al pasar el dato hacia otra aplicación, estamos comunicando 2 **actividades**, donde la **actividad emisora** es la nuestra  y la  **actividad receptora** es la actividad de la aplicación seleccionada, al crear el **intent** de tipo **SEND**,pasándole un dato de **texto plano**, android nos devuelve ya un componente nativo  que contiene la lista donde solamente especificaremos la aplicación en donde compartir dicho dato.
+En realidad al pasar el dato hacia otra aplicación, estamos comunicando 2 **actividades**, donde la **actividad emisora** es la nuestra  y la  **actividad receptora** es la actividad de la aplicación seleccionada, al crear el **intent** de tipo **SEND**, pasándole un dato de **texto plano**, Android nos devuelve un componente nativo  que contiene la lista donde solamente especificaremos la aplicación en donde compartir dicho dato.
 
 <div align="center"> <img src="../custom-share-intents/img_share_default.png" width=250px heigth=500px > </div>
 
 ## Share Intents  Personalizados
-Ahora para poder personalizar los Share Intents seguiremos los siguientes pasos:
+Ahora, para poder personalizar los Share Intents seguiremos los siguientes pasos:
 
 1. Obtener a la lista de aplicaciones de tipo SEND.
 
@@ -78,7 +88,7 @@ Posteriormente debemos de obtener el nombre de la aplicación con el **loadLabel
         }
     }
 ```
-Para poder tener un código mas limpio se recomienda crear un Modelo aparte, donde tenga como atributos por ejemplo el Nombre de la Aplicación ,Icono, Tipo, etc. y llevar el proceso a Segundo Plano ya que muchas veces el acceder al **queryIntentActivities()** y hacer el recorrido  según el criterio de listado que desee, podría matar al hilo principal, en este caso se usa un **Asyntask**.
+Para poder tener un código más limpio se recomienda crear un Modelo aparte, donde tenga como atributos por ejemplo el Nombre de la Aplicación ,Icono, Tipo, etc. y llevar el proceso a Segundo Plano ya que muchas veces el acceder al **queryIntentActivities()** y hacer el recorrido  según el criterio de listado que desee, podría matar al hilo principal, en este caso se usa un **Asynctask**.
 
 ## 3. Vincular nuestra Actividad con el ShareActivity de la aplicación seleccionada.
 Para poder vincular nuestra actividad debemos de crear un ComponentName  en el cual especificamos el nombre del paquete y el nombre del ActivityInfo de la aplicación seleccionada.
@@ -94,17 +104,17 @@ shareIntent.setComponent(componentName);
 startActivity(shareIntent);    
 ```
 ## 4. Implementar el BottomSheetDialog con el RecyclerView
-El BottomSheetDialog es un componente que se incluyo en la Biblioteca de soporte 23.2 y es  compatible con versiones anteriores.
+El BottomSheetDialog es un componente que se incluyó en la Biblioteca de soporte 23.2 y es  compatible con versiones anteriores.
 
 > Mas información: https://material.io/guidelines/components/bottom-sheets.html#
 
 ```java
 BottomSheetDialog mBottomSheetDialog = new BottomSheetDialog (getActivity());
 View sheetView = getActivity ().getLayoutInflater().Inflate (R.layout.fragment_bottom_sheet,null);
-mBottomSheetDialog.setContentView (sheetView) ; 
+mBottomSheetDialog.setContentView (sheetView) ;
 mBottomSheetDialog.show () ;
 ```
-Se puede establecer una altura relativa a la hora de realizar gestos con el Touch en el  BottomSheetDialog, simplemente agregando la siguiente sentencia de código,  en el caso de PagoEfectivoWallet3.0 se estable como altura relativa a la altura del ViewPager del **GenerateCipActivity** para que el usuario no pierda la visualización del código generado al inflar el BottomSheetDialog.
+Se puede establecer una altura relativa a la hora de realizar gestos con el Touch en el  BottomSheetDialog, simplemente agregando la siguiente sentencia de código,  en nuestro ejemplo se estable como altura relativa a la altura del ViewPager del **GenerateCipActivity** para que el usuario no pierda la visualización del código generado al inflar el BottomSheetDialog.
 
 ```java
 BottomSheetBehavior bottomSheetBehavior = BottomSheetBehavior.from(((View) view.getParent()));
@@ -155,8 +165,3 @@ Es recomendable crear una clase aparte para no ensuciar el código, también el 
  - https://stackoverflow.com/questions/6827407/how-to-customize-share-intent-in-android
 
  - https://medium.com/@anitas3791/android-bottomsheetdialog-3871a6e9d538
-
-
-
-
-
