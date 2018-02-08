@@ -20,7 +20,7 @@ Expuesto lo anterior comencemos a desarrollar nuestro ejemplo, en este punto ya 
 
 #### Paso 1. Arrastremos 6 UIViews hacia nuestro View Controller:
 
-![Default Image](../RegisterForm/ViewController.png)
+![Default Image](../RegisterForm/UIViewController.png)
 
 #### Paso 2. Colocamos los 6 UIViews dentro de un StackView y le asignamos los constraints:
 
