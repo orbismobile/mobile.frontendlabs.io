@@ -5,7 +5,7 @@ draft: false
 ---
 # Cómo presentar los elementos de tu tableView como cards?
 <p align="justify">
-Con la llega del iPhone X y con el reciente comunicado de apple en el que informa que a partir de abril no se aceptarán aplicaciones que no se encuentren optimizadas para la pantalla del iphone X, nos podemos dar cuenta de que la tendencia de apple es de priorizar y dar mayor soporte a los dispositivos con pantalla más amplia. Ahora nosotros como desarrolladores qué podemos hacer con una pantalla más amplia?, seguiremos utilizando imágenes, fuentes, íconos del mismo tamaño y desaprovechar el nuevo tamaño de las pantallas? o podemos aprovechar ese "espacio extra" para mejorar la interface de nuestras aplicaciones, mejorar la experiencia del usuario y desarrollar aplicaciones no tan "planas". Algunas aplicaciones están aprovechando este espacio extra para presentar la información de una manera no tan "plana" utilizando el estilo de cards, una de estas aplicaciones es Lineo que ha rehecho toda su interface y lo ha adaptado pensando en el nuevo tamaño de las pantallas, otro claro ejemplo es la presentación de las aplicaciones en el Appstore.
+Con la llegada del iPhone X y con el reciente comunicado de apple en el que informa que a partir de abril no se aceptarán aplicaciones que no se encuentren optimizadas para la pantalla del iphone X, nos podemos dar cuenta de que la tendencia de apple es de priorizar y dar mayor soporte a los dispositivos con pantalla más amplia. Ahora nosotros como desarrolladores qué podemos hacer con una pantalla más amplia?, seguiremos utilizando imágenes, fuentes, íconos del mismo tamaño y desaprovechar el nuevo tamaño de las pantallas? o podemos aprovechar ese "espacio extra" para mejorar la interface de nuestras aplicaciones, mejorar la experiencia del usuario y desarrollar aplicaciones no tan "planas". Algunas aplicaciones están aprovechando este espacio extra para presentar la información de una manera no tan "plana" utilizando el estilo de cards, una de estas aplicaciones es Linio que ha rehecho toda su interface y lo ha adaptado pensando en el nuevo tamaño de las pantallas, otro claro ejemplo es la presentación de las aplicaciones en el Appstore.
 </p>
 
 ![Default Image](../AnimationTableView/AppStore.png)
@@ -14,7 +14,7 @@ Crear aplicaciones con este estilo no es nada complicado, todo se maneja a trav�
 
 ## Comenzemos a constuir nuestro Card
 <p align="justify">
-Crearemos un nuevo proyecto en xCode, eliminamos el View Controller que se genera por defecto en el Main.storyboard y en su lugar colocaremos un Table View Controller. Luego de ello crearemos nuestro xib que es donde configuraremos nuestra celda, para crear nuestro xib debes de hacer click derecho en el Bundle de tu proyecto y seleccionar la opción New File -> Cocoa Touch Class -> Next , luego deberás asignarle un nombre  a tu clase y en la opción Subclass deberás seleccionar que la clase sea de tipo: UITableViewCell y marcar la opción : Also create XIB FIle para que se genere la interface.</p>
+Crearemos un nuevo proyecto en xCode, eliminamos el View Controller que se genera por defecto en el Main.storyboard y en su lugar colocaremos un Table View Controller. Luego de ello crearemos nuestro xib que es donde configuraremos nuestra celda, para crear nuestro xib debes de hacer click derecho en el Bundle de tu proyecto y seleccionar la opción New File -> Cocoa Touch Class -> Next , luego deberás asignarle un nombre  a tu clase y en la opción Subclass deberás seleccionar que la clase sea de tipo: UITableViewCell y marcar la opción : Also create XIB File para que se genere la interface.</p>
 
 ![Default Image](../AnimationTableView/XibCell.png)
 <p align="justify">
@@ -22,7 +22,7 @@ Podemos en nuestro bundle del proyecto, que se han generado 2 archivos uno de el
 
 ### Contruyendo nuestra interface (.xib)
 
-Para nuestro ejemplo trabajaremos con una imágen y el título de la imagen.
+Para nuestro ejemplo trabajaremos con una imágen y el título de la imágen.
 
 * Para nuestra imágen colocaremos los siguientes constraints con respecto al contenedor:
 
@@ -99,7 +99,7 @@ Ejecutamos nuestro proyecto y listo!!!, lo logramos ya tenemos nuestra interface
 
 ![Default Image](../AnimationTableView/CardFinal.png)
 
-Hasta ahora hemos logrado nuestro cometido, pero que tal si implementamos una animación al momento de presentar los cards?, las siguientes líneas de código otorgarán el efecto de que los cards se cargan de abaja hacia arriba logrando una presentación no tan "plana".
+Hasta ahora hemos logrado nuestro cometido, pero que tal si implementamos una animación al momento de presentar los cards?, las siguientes líneas de código otorgarán el efecto de que los cards se cargan de abajo hacia arriba logrando una presentación no tan "plana".
 
 ```
 func animateTable() {
@@ -122,7 +122,7 @@ func animateTable() {
 }
 ```
 
-La función declarada líneas arriba debemos de ejecutarla en la función viewWillAppear():
+La función declarada líneas arriba debemos de ejecutarla en la función **viewWillAppear()**:
 
 ```
 override func viewWillAppear(_ animated: Bool) {
