@@ -5,8 +5,8 @@ draft: false
 ---
 
 Cuando desarrollamos con APIs web o servicios de terceros en nuestra aplicación,
- tenemos la limitante de programar o probar dependiendo la disponibilidad en el que se encuentre dicho servicio,
- la necesidad viene en ¿Podría desarrollar y probar mi aplicación sin depender todo el tiempo de un servicio?, la respuesta es un contundente **Sí se puede**,
+tenemos la limitante de programar o probar dependiendo de la disponibilidad del servicio,
+nace la interrogante ¿Podría desarrollar y probar mi aplicación sin depender todo el tiempo de un servicio?, la respuesta es un contundente **Sí se puede**,
  para lograr ello necesitamos acudir al uso de **stubs** y **mocks**.
 
 # Conceptos básicos
@@ -15,9 +15,8 @@ Normalmente los términos **stubs** y **mocks** se manejan bajo una suite de pru
 
 ## Stubs
 
-Es la copia de una funcionalidad pero de forma puntual o fija a lo que realiza dicha función original.
-
-Una funcionalidad viene a ser una orden o un conjunto de órdenes que tienen uno o muchos propósitos, sea calcular la suma de un número, o retornar el total a pagar de un carrito de compras.
+Son aquellas funciones de relleno que tienen como finalidad sustituir funcionalidades del cual depende nuestro código,
+Una funcionalidad viene a ser una orden o un conjunto de órdenes que tienen uno o muchos propósitos, ya sea calcular la suma de un número, o retornar el total a pagar de un carrito de compras.
 
 Por ejemplo, tenemos la siguiente función llamada **randomNumber**:
 
@@ -27,7 +26,7 @@ Realizamos un **stub** de la función **randomNumber**:
 
 {{< gist andru255 b75444f1f41391921d2b2ec2fd75ba1b "randomNumberStub.swift">}}
 
-Como se visualiza, un **stub** no maneja una complejidad, simplemente cumple lo que necesitamos,
+Como se visualiza, un **stub** no tiene una operación compleja, simplemente cumple con lo que necesitamos,
 una función con el mismo nombre pero con una salida puntal o fija :)
 
 Ahora tenemos el siguiente ejemplo:
@@ -52,7 +51,7 @@ nuestra clase se llamará **UserActions**
 
 {{< gist andru255 b75444f1f41391921d2b2ec2fd75ba1b "UserActions.swift">}}
 
-Ahora, implementamos nuestro protocolo a nuestra clase que lo llamaremos **MockUserActions**:
+Ahora, implementamos nuestro protocolo a nuestra clase llamada **MockUserActions**:
 
 {{< gist andru255 b75444f1f41391921d2b2ec2fd75ba1b "MockUserActions.swift">}}
 
@@ -117,7 +116,7 @@ Como ya tenemos nuestras definiciones, como resultado tenemos las siguientes pru
 Los mocks se dividen en 2 tipos, que son los **parciales** y **completos**, estos son fáciles de detectar
 ya que un **mock parcial** simula una parte de una clase, mientras los **completos** vienen a ser los que cubren todas las funcionalidades de una clase en base al protocolo del cual son definidos.
 
-## Créditos:
+## Fuentes
 
 - [Mocking in Swift by Jhon Sundell](https://www.swiftbysundell.com/posts/mocking-in-swift)
 - [Desmitificando los dobles de test: Mocks, stubs and friends](https://www.genbetadev.com/javascript/desmitificando-los-dobles-de-test-mocks-stubs-and-friends)
